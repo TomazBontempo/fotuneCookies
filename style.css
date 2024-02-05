@@ -94,7 +94,7 @@ p {
   transform: translateX(-50%);
   margin-left: 6px;
   width: 235px;
-  height: auto;
+  height: 130px;
   z-index: 1;
   animation: fadeIn 1s ease-in;
 }
