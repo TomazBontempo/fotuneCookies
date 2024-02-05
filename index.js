@@ -1,3 +1,4 @@
+//Creates arrawy of motivational phrases that will be randomly picked and displayed when the cookie is clicked.
 const motivationalPhrases = [
   "Wow! Your hair looks amazing today.",
   "I know it's been a long year, but it's only going uphills from here!",
@@ -12,80 +13,65 @@ const motivationalPhrases = [
   "I predict that in your future... Wow. holy shit! Am I allowed to say? It says that you're gonna be really happy!",
 ];
 
-// Get the jar image element by ID
+// Get the jar and animation images by ID.
 const jarImage = document.getElementById("jar");
-
-// Get the animation image element by ID
 const animationImage = document.getElementById("animation");
 
-// Add onclick event to the jar image
+// Add onclick event to the jar image.
 jarImage.addEventListener("click", () => {
-  // Generate a random number between 0 and 1
+  // Generate a random number between 0 and 1.
   const random = Math.random();
 
-  //PURPLE:
-  // Check if the random number is less than or equal to 0.33 (33% chance)
-  if (random <= 0.05) {
-    // Change the src of the animation image to the shake.gif
+  //SHAKE AND FORTUNE (25% chance):
+  // Check if the random number is less than 0.25.
+  if (random <= 0.25) {
+    // Change the src of the animation image to the shake.gif and remove the jar from DOM.
     animationImage.src = "/imgs/shake.gif";
-
-    // Remove the jar image from the DOM
     jarImage.remove();
 
-    // Set a timer to revert the changes after 2 seconds
+    // Set timers to change pictures when animations are over.
     setTimeout(() => {
       // Change the src of the animation image back to fullPic.png
       animationImage.src = "/imgs/cookieOut.gif";
 
-      // Set a timer to revert the changes after 2 seconds
       setTimeout(() => {
         // Change the src of the animation image back to fullPic.png
         animationImage.src = "/imgs/fullPic.png";
-        // Add the class "cookie" to the animation image
         animationImage.classList.add("animation");
 
-        // Create a new image element
+        // Creates new image elements and the div it will be placed in, giving both the proper classes and ids.
         const cookieImage = document.createElement("img");
-
-        // Set the src attribute to the cookie.gif path
         cookieImage.src = "/imgs/cookie.gif";
-
-        // Add the class "cookie" to the cookie image
         cookieImage.id = "cookie";
-
-        // Append the cookie image to the document body
         const luckBox = document.createElement("div");
         luckBox.classList.add("luckBox");
+
+        //Gets the box div and appends the new elements to it.
         const box = document.querySelector(".box");
         box.appendChild(luckBox);
         box.appendChild(cookieImage);
 
         setTimeout(() => {
           cookieImage.src = "/imgs/openCookie.png";
-          // Randomly pick a motivational phrase from the array
+          // Randomly pick a motivational phrase from the array.
           const randomPhrase =
             motivationalPhrases[
               Math.floor(Math.random() * motivationalPhrases.length)
             ];
 
-          // Create a new paragraph element
+          // Create a new paragraph element and set the text content of the paragraph to the random phrase, giivng it an id and appending it to the luckBox.
           const phraseParagraph = document.createElement("p");
-
-          // Set the text content of the paragraph to the random phrase
           phraseParagraph.textContent = randomPhrase;
-
-          // Append the paragraph to the document body
           phraseParagraph.id = "luck";
           luckBox.appendChild(phraseParagraph);
 
-          // Add onclick event to the cookie image
+          // Add onclick event to the cookie image that will remove the cookie image, the paragraph and the luckBox.
           cookieImage.addEventListener("click", () => {
-            // Remove the cookie image from the DOM
             cookieImage.remove();
             phraseParagraph.remove();
             luckBox.remove();
 
-            // Append the jar image back to the DOM
+            // Append the jar image back to the DOM.
             box.insertBefore(jarImage, animationImage);
           });
         }, 2400);
@@ -93,84 +79,72 @@ jarImage.addEventListener("click", () => {
     }, 1300);
   }
 
-  //YELLOOW:
-  // Check if the random number is greater than 0.33 and less than or equal to 0.66 (33% chance)
-  else if (random > 0.05 && random <= 0.65) {
-    // Change the src of the animation image to cookie out
+  //FOTUNE (50% chance):
+  // Check if the random number is greater than 0.25 and less than or equal to 0.75.
+  else if (random > 0.25 && random <= 0.75) {
+    // Change the src of the animation image to cookie out and remove the jar from DOM.
     animationImage.src = "/imgs/cookieOut.gif";
-
-    // Remove the jar image from the DOM
     jarImage.remove();
 
-    // Set a timer to revert the changes after 2 seconds
+    // Set timers to change pictures when animations are over.
     setTimeout(() => {
-      // Change the src of the animation image back to fullPic.png
+      // Change the src of the animation image back to fullPic.png.
       animationImage.src = "/imgs/fullPic.png";
-      // Add the class "cookie" to the animation image
       animationImage.classList.add("animation");
 
-      // Create a new image element
+      // Creates new image elements and the div it will be placed in, giving both the proper classes and ids.
       const cookieImage = document.createElement("img");
-
-      // Set the src attribute to the cookie.gif path
       cookieImage.src = "/imgs/cookie.gif";
-
-      // Add the class "cookie" to the cookie image
       cookieImage.id = "cookie";
-
-      // Append the cookie image to the document body
       const luckBox = document.createElement("div");
       luckBox.classList.add("luckBox");
+
+      // Add onclick event to the cookie image that will remove the cookie image, the paragraph and the luckBox.
       const box = document.querySelector(".box");
       box.appendChild(luckBox);
       box.appendChild(cookieImage);
 
       setTimeout(() => {
         cookieImage.src = "/imgs/openCookie.png";
-        // Randomly pick a motivational phrase from the array
+        // Randomly pick a motivational phrase from the array.
         const randomPhrase =
           motivationalPhrases[
             Math.floor(Math.random() * motivationalPhrases.length)
           ];
 
-        // Create a new paragraph element
+        // Create a new paragraph element and set the text content of the paragraph to the random phrase, giivng it an id and appending it to the luckBox.
         const phraseParagraph = document.createElement("p");
-
-        // Set the text content of the paragraph to the random phrase
         phraseParagraph.textContent = randomPhrase;
-
-        // Append the paragraph to the document body
         phraseParagraph.id = "luck";
         luckBox.appendChild(phraseParagraph);
 
-        // Add onclick event to the cookie image
+        // Add onclick event to the cookie image that will remove the cookie image, the paragraph and the luckBox.
         cookieImage.addEventListener("click", () => {
-          // Remove the cookie image from the DOM
           cookieImage.remove();
           phraseParagraph.remove();
           luckBox.remove();
 
-          // Append the jar image back to the DOM
+          // Append the jar image back to the DOM.
           box.insertBefore(jarImage, animationImage);
         });
       }, 2400);
     }, 2500);
   }
 
-  //GREEN:
+  //SHAKE:
   else {
-    // Change the src of the animation image to the shake.gif
+    // Change the src of the animation image to the shake.gif.
     animationImage.src = "/imgs/shake.gif";
 
-    // Remove the jar image from the DOM
+    // Change jar opacity to 0.
     jarImage.style.opacity = "0";
 
-    // Set a timer to revert the changes after 2 seconds
+    // Set a timer to revert the changes in the end of animation.
     setTimeout(() => {
       // Change the src of the animation image back to fullPic.png
       animationImage.src = "/imgs/fullPic.png";
 
-      // Append the jar image back to the DOM
+      // Change jar opacity back to 100.
       jarImage.style.opacity = "100";
     }, 1300);
   }
