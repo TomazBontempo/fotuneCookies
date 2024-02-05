@@ -27,7 +27,7 @@ jarImage.addEventListener("click", () => {
   // Check if the random number is less than or equal to 0.33 (33% chance)
   if (random <= 0.05) {
     // Change the src of the animation image to the shake.gif
-    animationImage.src = "/imgs/animations/shake.gif";
+    animationImage.src = "/imgs/shake.gif";
 
     // Remove the jar image from the DOM
     jarImage.remove();
@@ -35,7 +35,7 @@ jarImage.addEventListener("click", () => {
     // Set a timer to revert the changes after 2 seconds
     setTimeout(() => {
       // Change the src of the animation image back to fullPic.png
-      animationImage.src = "/imgs/animations/cookieOut.gif";
+      animationImage.src = "/imgs/cookieOut.gif";
 
       // Set a timer to revert the changes after 2 seconds
       setTimeout(() => {
@@ -48,7 +48,7 @@ jarImage.addEventListener("click", () => {
         const cookieImage = document.createElement("img");
 
         // Set the src attribute to the cookie.gif path
-        cookieImage.src = "/imgs/animations/cookie.gif";
+        cookieImage.src = "/imgs/cookie.gif";
 
         // Add the class "cookie" to the cookie image
         cookieImage.id = "cookie";
@@ -97,7 +97,7 @@ jarImage.addEventListener("click", () => {
   // Check if the random number is greater than 0.33 and less than or equal to 0.66 (33% chance)
   else if (random > 0.05 && random <= 0.65) {
     // Change the src of the animation image to cookie out
-    animationImage.src = "/imgs/animations/cookieOut.gif";
+    animationImage.src = "/imgs/cookieOut.gif";
 
     // Remove the jar image from the DOM
     jarImage.remove();
@@ -113,7 +113,7 @@ jarImage.addEventListener("click", () => {
       const cookieImage = document.createElement("img");
 
       // Set the src attribute to the cookie.gif path
-      cookieImage.src = "/imgs/animations/cookie.gif";
+      cookieImage.src = "/imgs/cookie.gif";
 
       // Add the class "cookie" to the cookie image
       cookieImage.id = "cookie";
@@ -160,7 +160,7 @@ jarImage.addEventListener("click", () => {
   //GREEN:
   else {
     // Change the src of the animation image to the shake.gif
-    animationImage.src = "/imgs/animations/shake.gif";
+    animationImage.src = "/imgs/shake.gif";
 
     // Remove the jar image from the DOM
     jarImage.style.opacity = "0";
