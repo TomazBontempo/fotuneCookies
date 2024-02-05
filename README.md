@@ -2,7 +2,7 @@
 
 This is a project commissioned by the artist Alivia, creator of all images used in it, for her own portfoliio.
 
-It is a fun, interactive web application that simulates a cookie jar. Users can click on a cookie, which triggers a series of animations. The cookie is taken out of the jar, opened, and reveals a random motivational phrase to the user.
+It is a fun, interactive web application that simulates a fortune cookie jar. Users can click on it, which triggers a series of animations. The cookie is taken out of the jar, opened, and reveals a random motivational phrase to the user.
 
 It displays my skills in manipulating the Document Object Model (DOM) and using functions and conditional statements to put it all together and make the whole thing work.
 
